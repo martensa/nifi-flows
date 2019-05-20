@@ -1,0 +1,4 @@
+flows:
+  8c324f58-aa38-4083-b6ca-573d73817040: {ver: 1, file: MySQLToHive.snapshot}
+layoutVer: 1
+bucketId: 34daf467-da63-4eb9-9c7e-310be271269b
