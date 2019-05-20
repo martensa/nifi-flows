@@ -1,0 +1,4 @@
+flows:
+  436cd836-5192-4c95-924f-2550fde7276c: {ver: 1, file: MySQLCDCIngestion.snapshot}
+layoutVer: 1
+bucketId: 72e7e6fe-bd06-42e4-b1ea-4248a87aab43
