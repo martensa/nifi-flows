@@ -1,0 +1,949 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "96231ed0-d290-3362-8204-e4122d0d9c45",
+        "name" : "Put SHA256 signatures in cache",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "42a74b5f-5fa7-37c9-ab9e-4fd864c48e07",
+      "labelIndex" : 1,
+      "name" : "SHA256 Signatures",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "99baa17f-dba1-3b43-840f-959987340d13",
+        "name" : "Route SHA256 Signatures to Map Cache",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : 1926.0119018554688,
+        "y" : 535.4690017700195
+      }, {
+        "x" : 1926.0119018554688,
+        "y" : 585.4690017700195
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "b7dc97f6-b719-3a71-b022-bf44441e4e09",
+        "name" : "Lookup SHA256 signatures from cache",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "79d3c310-c25d-3ffd-b956-759acec1a672",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "not-found" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "b7dc97f6-b719-3a71-b022-bf44441e4e09",
+        "name" : "Lookup SHA256 signatures from cache",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : 1982.5375366210938,
+        "y" : 186.9639663696289
+      }, {
+        "x" : 1982.5375366210938,
+        "y" : 236.9639663696289
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "96231ed0-d290-3362-8204-e4122d0d9c45",
+        "name" : "Put SHA256 signatures in cache",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "f4d04197-6abd-3127-9b80-294024843fec",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "96231ed0-d290-3362-8204-e4122d0d9c45",
+        "name" : "Put SHA256 signatures in cache",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "b3357364-a3a8-38e6-adf0-7a4643841d1a",
+        "name" : "Verified Files",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "77c62a6f-68f6-34fb-9194-9e9858876c58",
+      "labelIndex" : 1,
+      "name" : "Verified Hash",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "75377403-58e7-3c24-a7eb-5cf1f6e3b2bf",
+        "name" : "Compare SHA256 Hash Values",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "b7dc97f6-b719-3a71-b022-bf44441e4e09",
+        "name" : "Lookup SHA256 signatures from cache",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "c1efaa3d-729e-3a55-8137-15984e03c9d0",
+      "labelIndex" : 1,
+      "name" : "Source Files",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "unmatched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "99baa17f-dba1-3b43-840f-959987340d13",
+        "name" : "Route SHA256 Signatures to Map Cache",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "99baa17f-dba1-3b43-840f-959987340d13",
+        "name" : "Route SHA256 Signatures to Map Cache",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "02a5b485-39c2-34d9-8c18-6cfbe072a59e",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "55a718f2-447a-3f20-80e9-d1051564eeff",
+        "name" : "Identify SHA256 Signature Files",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "601c469d-33ba-3f7d-993e-5bc5e18c7951",
+        "name" : "Unverified Files",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "534e0fe9-66d9-3476-beea-2dd1e7c27d56",
+      "labelIndex" : 1,
+      "name" : "Unverified Hash",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "unmatched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "75377403-58e7-3c24-a7eb-5cf1f6e3b2bf",
+        "name" : "Compare SHA256 Hash Values",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "55a718f2-447a-3f20-80e9-d1051564eeff",
+        "name" : "Identify SHA256 Signature Files",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "cedb74fe-495b-3ab0-a7a4-cad1eee01f98",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "f84da5b3-e293-3ffc-980c-086c3c322d91",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "e9d504ec-a190-32e9-9c17-d5a09b52acc2",
+        "name" : "Calculate SHA256 Hash",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "f89892f7-b25c-3688-9fd9-7e781b171d3d",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "b7dc97f6-b719-3a71-b022-bf44441e4e09",
+        "name" : "Lookup SHA256 signatures from cache",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "75377403-58e7-3c24-a7eb-5cf1f6e3b2bf",
+        "name" : "Compare SHA256 Hash Values",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "cbed4e4a-6182-39c5-aa51-eaee1ffdc626",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+        "id" : "e9d504ec-a190-32e9-9c17-d5a09b52acc2",
+        "name" : "Calculate SHA256 Hash",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ {
+      "bundle" : {
+        "artifact" : "nifi-distributed-cache-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.distributed.cache.client.DistributedMapCacheClient"
+      }, {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.distributed.cache.client.AtomicDistributedMapCacheClient"
+      } ],
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "12da6967-e90a-3a8a-8ebe-0f5893411639",
+      "name" : "DistributedMapCacheClientService",
+      "properties" : {
+        "Server Port" : "4557",
+        "Server Hostname" : "localhost",
+        "Communications Timeout" : "30 secs"
+      },
+      "propertyDescriptors" : {
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Server Port" : {
+          "displayName" : "Server Port",
+          "identifiesControllerService" : false,
+          "name" : "Server Port",
+          "sensitive" : false
+        },
+        "Server Hostname" : {
+          "displayName" : "Server Hostname",
+          "identifiesControllerService" : false,
+          "name" : "Server Hostname",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.distributed.cache.client.DistributedMapCacheClientService"
+    } ],
+    "funnels" : [ ],
+    "identifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "Data Validation",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 1663.936355132545,
+      "y" : 1303.0064376015364
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "f84da5b3-e293-3ffc-980c-086c3c322d91",
+      "name" : "GetFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 408.0,
+        "y" : 519.9999923706055
+      },
+      "properties" : {
+        "Keep Source File" : "false",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "/data/raw",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
+      },
+      "propertyDescriptors" : {
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
+          "identifiesControllerService" : false,
+          "name" : "Keep Source File",
+          "sensitive" : false
+        },
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
+          "identifiesControllerService" : false,
+          "name" : "Polling Interval",
+          "sensitive" : false
+        },
+        "Input Directory" : {
+          "displayName" : "Input Directory",
+          "identifiesControllerService" : false,
+          "name" : "Input Directory",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "File Filter" : {
+          "displayName" : "File Filter",
+          "identifiesControllerService" : false,
+          "name" : "File Filter",
+          "sensitive" : false
+        },
+        "Path Filter" : {
+          "displayName" : "Path Filter",
+          "identifiesControllerService" : false,
+          "name" : "Path Filter",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GetFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "e9d504ec-a190-32e9-9c17-d5a09b52acc2",
+      "name" : "Calculate SHA256 Hash",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1465.2367553710938,
+        "y" : 799.9344863891602
+      },
+      "properties" : {
+        "Hash Algorithm" : "SHA-256",
+        "Hash Attribute Name" : "hash.value.new"
+      },
+      "propertyDescriptors" : {
+        "Hash Algorithm" : {
+          "displayName" : "Hash Algorithm",
+          "identifiesControllerService" : false,
+          "name" : "Hash Algorithm",
+          "sensitive" : false
+        },
+        "Hash Attribute Name" : {
+          "displayName" : "Hash Attribute Name",
+          "identifiesControllerService" : false,
+          "name" : "Hash Attribute Name",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.HashContent",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "601c469d-33ba-3f7d-993e-5bc5e18c7951",
+      "name" : "Unverified Files",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 2297.577850710888,
+        "y" : 1126.6334097486165
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "/data/unmatched",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "b3357364-a3a8-38e6-adf0-7a4643841d1a",
+      "name" : "Verified Files",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 2152.9716248588243,
+        "y" : 447.8878381637353
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "/data/matched",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "99baa17f-dba1-3b43-840f-959987340d13",
+      "name" : "Route SHA256 Signatures to Map Cache",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 893.9754028320312,
+        "y" : 141.9639663696289
+      },
+      "properties" : {
+        "Routing Strategy" : "Route to 'match' if all match",
+        "sigfile" : "${sigfile:equals(true)}"
+      },
+      "propertyDescriptors" : {
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        },
+        "sigfile" : {
+          "displayName" : "sigfile",
+          "identifiesControllerService" : false,
+          "name" : "sigfile",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "b7dc97f6-b719-3a71-b022-bf44441e4e09",
+      "name" : "Lookup SHA256 signatures from cache",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1471.0119018554688,
+        "y" : 495.46900177001953
+      },
+      "properties" : {
+        "Cache Entry Identifier" : "${filename:substringBeforeLast('.')}",
+        "Put Cache Value In Attribute" : "hash.value.orig",
+        "Distributed Cache Service" : "12da6967-e90a-3a8a-8ebe-0f5893411639",
+        "Max Length To Put In Attribute" : "256",
+        "Character Set" : "UTF-8"
+      },
+      "propertyDescriptors" : {
+        "Cache Entry Identifier" : {
+          "displayName" : "Cache Entry Identifier",
+          "identifiesControllerService" : false,
+          "name" : "Cache Entry Identifier",
+          "sensitive" : false
+        },
+        "Put Cache Value In Attribute" : {
+          "displayName" : "Put Cache Value In Attribute",
+          "identifiesControllerService" : false,
+          "name" : "Put Cache Value In Attribute",
+          "sensitive" : false
+        },
+        "Distributed Cache Service" : {
+          "displayName" : "Distributed Cache Service",
+          "identifiesControllerService" : true,
+          "name" : "Distributed Cache Service",
+          "sensitive" : false
+        },
+        "Max Length To Put In Attribute" : {
+          "displayName" : "Max Length To Put In Attribute",
+          "identifiesControllerService" : false,
+          "name" : "Max Length To Put In Attribute",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.FetchDistributedMapCache",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "75377403-58e7-3c24-a7eb-5cf1f6e3b2bf",
+      "name" : "Compare SHA256 Hash Values",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 2109.2249309086887,
+        "y" : 809.1718704710802
+      },
+      "properties" : {
+        "Routing Strategy" : "Route to 'match' if all match",
+        "verified" : "${hash.value.new:trim():equals(${hash.value.orig:trim()})}"
+      },
+      "propertyDescriptors" : {
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        },
+        "verified" : {
+          "displayName" : "verified",
+          "identifiesControllerService" : false,
+          "name" : "verified",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "96231ed0-d290-3362-8204-e4122d0d9c45",
+      "name" : "Put SHA256 signatures in cache",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1527.5375366210938,
+        "y" : 146.9639663696289
+      },
+      "properties" : {
+        "Cache Entry Identifier" : "${filename:substringBeforeLast('.')}",
+        "Cache update strategy" : "replace",
+        "Distributed Cache Service" : "12da6967-e90a-3a8a-8ebe-0f5893411639",
+        "Max cache entry size" : "1 MB"
+      },
+      "propertyDescriptors" : {
+        "Cache Entry Identifier" : {
+          "displayName" : "Cache Entry Identifier",
+          "identifiesControllerService" : false,
+          "name" : "Cache Entry Identifier",
+          "sensitive" : false
+        },
+        "Cache update strategy" : {
+          "displayName" : "Cache update strategy",
+          "identifiesControllerService" : false,
+          "name" : "Cache update strategy",
+          "sensitive" : false
+        },
+        "Distributed Cache Service" : {
+          "displayName" : "Distributed Cache Service",
+          "identifiesControllerService" : true,
+          "name" : "Distributed Cache Service",
+          "sensitive" : false
+        },
+        "Max cache entry size" : {
+          "displayName" : "Max cache entry size",
+          "identifiesControllerService" : false,
+          "name" : "Max cache entry size",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutDistributedMapCache",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "cb092170-ad24-3d06-92ed-5e7e28b0eefe",
+      "identifier" : "55a718f2-447a-3f20-80e9-d1051564eeff",
+      "name" : "Identify SHA256 Signature Files",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 956.7376708984375,
+        "y" : 531.7782974243164
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "sigfile" : "${filename:substringAfterLast('.'):equals('sig')}"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "sigfile" : {
+          "displayName" : "sigfile",
+          "identifiesControllerService" : false,
+          "name" : "sigfile",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : { }
+  }
+}
