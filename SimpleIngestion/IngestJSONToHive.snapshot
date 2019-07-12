@@ -1,0 +1,768 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "fbff2cfe-1e83-3bb1-9fd3-003fb56bd092",
+        "name" : "ReplaceText",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "dc2171dd-392a-3879-a7a8-84b766176db5",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "2f71fdfc-93cf-3945-ab50-753bdd648852",
+        "name" : "PutORC",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "fcabcc07-4f03-33af-91c8-82da5567ec56",
+        "name" : "PutHiveQL",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "488e2122-9db5-3f7e-99e6-1ef105240019",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "fbff2cfe-1e83-3bb1-9fd3-003fb56bd092",
+        "name" : "ReplaceText",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "2f71fdfc-93cf-3945-ab50-753bdd648852",
+        "name" : "PutORC",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "8d18627c-49c2-351f-b8e5-b955c93fde18",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+        "id" : "80fdca01-9b15-391c-bb6f-c56f3e2dbd75",
+        "name" : "GetHDFS",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ {
+      "bundle" : {
+        "artifact" : "nifi-hive3-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.dbcp.DBCPService"
+      }, {
+        "bundle" : {
+          "artifact" : "nifi-hive-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.dbcp.hive.Hive3DBCPService"
+      }, {
+        "bundle" : {
+          "artifact" : "nifi-hive-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.dbcp.hive.HiveDBCPService"
+      } ],
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "bee84195-b87f-3092-b43e-f2e2699509a8",
+      "name" : "Hive3ConnectionPool",
+      "properties" : {
+        "kerberos-credentials-service" : "1bb2337b-a286-3ffb-8811-1e9d838d96a4",
+        "hive-max-total-connections" : "8",
+        "hive-db-connect-url" : "jdbc:hive2://muwodig-cb-dev-cluster-m310.5cdavawti0bejmzr202z3lbcve.ax.internal.cloudapp.net:2181,muwodig-cb-dev-cluster-m13.5cdavawti0bejmzr202z3lbcve.ax.internal.cloudapp.net:2181,muwodig-cb-dev-cluster-m29.5cdavawti0bejmzr202z3lbcve.ax.internal.cloudapp.net:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2",
+        "hive-config-resources" : "/etc/hive/conf/hive-site.xml",
+        "hive-max-wait-time" : "500 millis",
+        "hive-db-user" : "hdfs"
+      },
+      "propertyDescriptors" : {
+        "kerberos-credentials-service" : {
+          "displayName" : "Kerberos Credentials Service",
+          "identifiesControllerService" : true,
+          "name" : "kerberos-credentials-service",
+          "sensitive" : false
+        },
+        "Validation-query" : {
+          "displayName" : "Validation query",
+          "identifiesControllerService" : false,
+          "name" : "Validation-query",
+          "sensitive" : false
+        },
+        "Kerberos Keytab" : {
+          "displayName" : "Kerberos Keytab",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Keytab",
+          "sensitive" : false
+        },
+        "hive-max-total-connections" : {
+          "displayName" : "Max Total Connections",
+          "identifiesControllerService" : false,
+          "name" : "hive-max-total-connections",
+          "sensitive" : false
+        },
+        "hive-db-password" : {
+          "displayName" : "Password",
+          "identifiesControllerService" : false,
+          "name" : "hive-db-password",
+          "sensitive" : false
+        },
+        "hive-db-connect-url" : {
+          "displayName" : "Database Connection URL",
+          "identifiesControllerService" : false,
+          "name" : "hive-db-connect-url",
+          "sensitive" : false
+        },
+        "Kerberos Principal" : {
+          "displayName" : "Kerberos Principal",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Principal",
+          "sensitive" : false
+        },
+        "hive-config-resources" : {
+          "displayName" : "Hive Configuration Resources",
+          "identifiesControllerService" : false,
+          "name" : "hive-config-resources",
+          "sensitive" : false
+        },
+        "hive-max-wait-time" : {
+          "displayName" : "Max Wait Time",
+          "identifiesControllerService" : false,
+          "name" : "hive-max-wait-time",
+          "sensitive" : false
+        },
+        "hive-db-user" : {
+          "displayName" : "Database User",
+          "identifiesControllerService" : false,
+          "name" : "hive-db-user",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.dbcp.hive.Hive3ConnectionPool"
+    }, {
+      "bundle" : {
+        "artifact" : "nifi-kerberos-credentials-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.kerberos.KerberosCredentialsService"
+      } ],
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "1bb2337b-a286-3ffb-8811-1e9d838d96a4",
+      "name" : "HDFSKeytabCredentialsService",
+      "properties" : {
+        "Kerberos Keytab" : "/etc/security/keytabs/hdfs.headless.keytab",
+        "Kerberos Principal" : "hdfs-muwodig-cb-dev-cluster@TEST.MULTIVAC.COM"
+      },
+      "propertyDescriptors" : {
+        "Kerberos Keytab" : {
+          "displayName" : "Kerberos Keytab",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Keytab",
+          "sensitive" : false
+        },
+        "Kerberos Principal" : {
+          "displayName" : "Kerberos Principal",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Principal",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.kerberos.KeytabCredentialsService"
+    }, {
+      "bundle" : {
+        "artifact" : "nifi-record-serialization-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.serialization.RecordReaderFactory"
+      } ],
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "e087cd80-11e9-3aad-b491-6d5c2fd629f5",
+      "name" : "JsonTreeReader",
+      "properties" : {
+        "Timestamp Format" : "yyyy-MM-dd HH:mm:ss",
+        "schema-name" : "${schema.name}",
+        "schema-access-strategy" : "schema-text-property",
+        "schema-text" : "{\n \"type\": \"record\",\n \"name\": \"oeedata_azure\",\n \"fields\": [\n  {\n   \"name\": \"ed\",\n   \"type\": \"string\"\n  },\n  {\n   \"name\": \"ma\",\n   \"type\": \"string\"\n  },\n  {\n   \"name\": \"cl_ts\",\n   \"type\": \"string\"\n  },\n  {\n   \"name\": \"ed_ts\",\n   \"type\": \"string\"\n  },\n  {\n   \"name\": \"oee\",\n   \"type\": \"double\"\n  },\n  {\n   \"name\": \"performance\",\n   \"type\": \"double\"\n  },\n  {\n   \"name\": \"availability\",\n   \"type\": \"double\"\n  },\n  {\n   \"name\": \"quality\",\n   \"type\": \"double\"\n  }\n ]\n}"
+      },
+      "propertyDescriptors" : {
+        "Timestamp Format" : {
+          "displayName" : "Timestamp Format",
+          "identifiesControllerService" : false,
+          "name" : "Timestamp Format",
+          "sensitive" : false
+        },
+        "Date Format" : {
+          "displayName" : "Date Format",
+          "identifiesControllerService" : false,
+          "name" : "Date Format",
+          "sensitive" : false
+        },
+        "schema-branch" : {
+          "displayName" : "Schema Branch",
+          "identifiesControllerService" : false,
+          "name" : "schema-branch",
+          "sensitive" : false
+        },
+        "schema-name" : {
+          "displayName" : "Schema Name",
+          "identifiesControllerService" : false,
+          "name" : "schema-name",
+          "sensitive" : false
+        },
+        "schema-registry" : {
+          "displayName" : "Schema Registry",
+          "identifiesControllerService" : true,
+          "name" : "schema-registry",
+          "sensitive" : false
+        },
+        "Time Format" : {
+          "displayName" : "Time Format",
+          "identifiesControllerService" : false,
+          "name" : "Time Format",
+          "sensitive" : false
+        },
+        "schema-access-strategy" : {
+          "displayName" : "Schema Access Strategy",
+          "identifiesControllerService" : false,
+          "name" : "schema-access-strategy",
+          "sensitive" : false
+        },
+        "schema-version" : {
+          "displayName" : "Schema Version",
+          "identifiesControllerService" : false,
+          "name" : "schema-version",
+          "sensitive" : false
+        },
+        "schema-text" : {
+          "displayName" : "Schema Text",
+          "identifiesControllerService" : false,
+          "name" : "schema-text",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.json.JsonTreeReader"
+    } ],
+    "funnels" : [ ],
+    "identifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "IngestJSONtoHive",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : -1365.113173119816,
+      "y" : 558.9050160311474
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "fbff2cfe-1e83-3bb1-9fd3-003fb56bd092",
+      "name" : "ReplaceText",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 468.0,
+        "y" : 523.0
+      },
+      "properties" : {
+        "Regular Expression" : "(?s)(^.*$)",
+        "Replacement Value" : "${hive.ddl} LOCATION '${absolute.hdfs.path}'",
+        "Evaluation Mode" : "Entire text",
+        "Character Set" : "UTF-8",
+        "Maximum Buffer Size" : "1 MB",
+        "Replacement Strategy" : "Always Replace"
+      },
+      "propertyDescriptors" : {
+        "Regular Expression" : {
+          "displayName" : "Search Value",
+          "identifiesControllerService" : false,
+          "name" : "Regular Expression",
+          "sensitive" : false
+        },
+        "Replacement Value" : {
+          "displayName" : "Replacement Value",
+          "identifiesControllerService" : false,
+          "name" : "Replacement Value",
+          "sensitive" : false
+        },
+        "Evaluation Mode" : {
+          "displayName" : "Evaluation Mode",
+          "identifiesControllerService" : false,
+          "name" : "Evaluation Mode",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Maximum Buffer Size" : {
+          "displayName" : "Maximum Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "Maximum Buffer Size",
+          "sensitive" : false
+        },
+        "Replacement Strategy" : {
+          "displayName" : "Replacement Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Replacement Strategy",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ReplaceText",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "retry" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-hive3-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "2f71fdfc-93cf-3945-ab50-753bdd648852",
+      "name" : "PutORC",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 464.0,
+        "y" : 323.0
+      },
+      "properties" : {
+        "Hadoop Configuration Resources" : "/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml",
+        "putorc-hive-table-name" : "${hive.table.name}",
+        "kerberos-credentials-service" : "1bb2337b-a286-3ffb-8811-1e9d838d96a4",
+        "putorc-stripe-size" : "64 MB",
+        "putorc-buffer-size" : "10 KB",
+        "compression-type" : "NONE",
+        "putorc-hive-field-names" : "true",
+        "record-reader" : "e087cd80-11e9-3aad-b491-6d5c2fd629f5",
+        "Kerberos Relogin Period" : "4 hours",
+        "overwrite" : "true",
+        "Directory" : "/warehouse/tablespace/external/hive/${hive.table.name}"
+      },
+      "propertyDescriptors" : {
+        "putorc-config-resources" : {
+          "displayName" : "ORC Configuration Resources",
+          "identifiesControllerService" : false,
+          "name" : "putorc-config-resources",
+          "sensitive" : false
+        },
+        "Hadoop Configuration Resources" : {
+          "displayName" : "Hadoop Configuration Resources",
+          "identifiesControllerService" : false,
+          "name" : "Hadoop Configuration Resources",
+          "sensitive" : false
+        },
+        "Additional Classpath Resources" : {
+          "displayName" : "Additional Classpath Resources",
+          "identifiesControllerService" : false,
+          "name" : "Additional Classpath Resources",
+          "sensitive" : false
+        },
+        "permissions-umask" : {
+          "displayName" : "Permissions umask",
+          "identifiesControllerService" : false,
+          "name" : "permissions-umask",
+          "sensitive" : false
+        },
+        "remote-group" : {
+          "displayName" : "Remote Group",
+          "identifiesControllerService" : false,
+          "name" : "remote-group",
+          "sensitive" : false
+        },
+        "putorc-hive-table-name" : {
+          "displayName" : "Hive Table Name",
+          "identifiesControllerService" : false,
+          "name" : "putorc-hive-table-name",
+          "sensitive" : false
+        },
+        "remote-owner" : {
+          "displayName" : "Remote Owner",
+          "identifiesControllerService" : false,
+          "name" : "remote-owner",
+          "sensitive" : false
+        },
+        "kerberos-credentials-service" : {
+          "displayName" : "Kerberos Credentials Service",
+          "identifiesControllerService" : true,
+          "name" : "kerberos-credentials-service",
+          "sensitive" : false
+        },
+        "putorc-stripe-size" : {
+          "displayName" : "Stripe Size",
+          "identifiesControllerService" : false,
+          "name" : "putorc-stripe-size",
+          "sensitive" : false
+        },
+        "putorc-buffer-size" : {
+          "displayName" : "Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "putorc-buffer-size",
+          "sensitive" : false
+        },
+        "Kerberos Keytab" : {
+          "displayName" : "Kerberos Keytab",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Keytab",
+          "sensitive" : false
+        },
+        "compression-type" : {
+          "displayName" : "Compression Type",
+          "identifiesControllerService" : false,
+          "name" : "compression-type",
+          "sensitive" : false
+        },
+        "putorc-hive-field-names" : {
+          "displayName" : "Normalize Field Names for Hive",
+          "identifiesControllerService" : false,
+          "name" : "putorc-hive-field-names",
+          "sensitive" : false
+        },
+        "Kerberos Principal" : {
+          "displayName" : "Kerberos Principal",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Principal",
+          "sensitive" : false
+        },
+        "record-reader" : {
+          "displayName" : "Record Reader",
+          "identifiesControllerService" : true,
+          "name" : "record-reader",
+          "sensitive" : false
+        },
+        "Kerberos Relogin Period" : {
+          "displayName" : "Kerberos Relogin Period",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Relogin Period",
+          "sensitive" : false
+        },
+        "overwrite" : {
+          "displayName" : "Overwrite Files",
+          "identifiesControllerService" : false,
+          "name" : "overwrite",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.orc.PutORC",
+      "yieldDuration" : "100 ms"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-hadoop-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "80fdca01-9b15-391c-bb6f-c56f3e2dbd75",
+      "name" : "GetHDFS",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 457.0,
+        "y" : 130.0
+      },
+      "properties" : {
+        "Keep Source File" : "true",
+        "Hadoop Configuration Resources" : "/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml",
+        "Minimum File Age" : "0 sec",
+        "Filter Match Name Only" : "true",
+        "Polling Interval" : "0 sec",
+        "Ignore Dotted Files" : "true",
+        "Compression codec" : "NONE",
+        "Recurse Subdirectories" : "false",
+        "kerberos-credentials-service" : "1bb2337b-a286-3ffb-8811-1e9d838d96a4",
+        "Batch Size" : "100",
+        "Kerberos Relogin Period" : "4 hours",
+        "Directory" : "/multivac/druid"
+      },
+      "propertyDescriptors" : {
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
+          "identifiesControllerService" : false,
+          "name" : "Keep Source File",
+          "sensitive" : false
+        },
+        "Hadoop Configuration Resources" : {
+          "displayName" : "Hadoop Configuration Resources",
+          "identifiesControllerService" : false,
+          "name" : "Hadoop Configuration Resources",
+          "sensitive" : false
+        },
+        "File Filter Regex" : {
+          "displayName" : "File Filter Regex",
+          "identifiesControllerService" : false,
+          "name" : "File Filter Regex",
+          "sensitive" : false
+        },
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Filter Match Name Only" : {
+          "displayName" : "Filter Match Name Only",
+          "identifiesControllerService" : false,
+          "name" : "Filter Match Name Only",
+          "sensitive" : false
+        },
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
+          "identifiesControllerService" : false,
+          "name" : "Polling Interval",
+          "sensitive" : false
+        },
+        "Ignore Dotted Files" : {
+          "displayName" : "Ignore Dotted Files",
+          "identifiesControllerService" : false,
+          "name" : "Ignore Dotted Files",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Additional Classpath Resources" : {
+          "displayName" : "Additional Classpath Resources",
+          "identifiesControllerService" : false,
+          "name" : "Additional Classpath Resources",
+          "sensitive" : false
+        },
+        "Compression codec" : {
+          "displayName" : "Compression codec",
+          "identifiesControllerService" : false,
+          "name" : "Compression codec",
+          "sensitive" : false
+        },
+        "IO Buffer Size" : {
+          "displayName" : "IO Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "IO Buffer Size",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "kerberos-credentials-service" : {
+          "displayName" : "Kerberos Credentials Service",
+          "identifiesControllerService" : true,
+          "name" : "kerberos-credentials-service",
+          "sensitive" : false
+        },
+        "Kerberos Keytab" : {
+          "displayName" : "Kerberos Keytab",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Keytab",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Kerberos Principal" : {
+          "displayName" : "Kerberos Principal",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Principal",
+          "sensitive" : false
+        },
+        "Kerberos Relogin Period" : {
+          "displayName" : "Kerberos Relogin Period",
+          "identifiesControllerService" : false,
+          "name" : "Kerberos Relogin Period",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "60 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.hadoop.GetHDFS",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure", "retry" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-hive-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "9235119c-c859-3645-b11e-7b9c2b63c829",
+      "identifier" : "fcabcc07-4f03-33af-91c8-82da5567ec56",
+      "name" : "PutHiveQL",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 465.0,
+        "y" : 727.0
+      },
+      "properties" : {
+        "statement-delimiter" : ";",
+        "Hive Database Connection Pooling Service" : "bee84195-b87f-3092-b43e-f2e2699509a8",
+        "hive-charset" : "UTF-8",
+        "rollback-on-failure" : "false",
+        "hive-batch-size" : "100"
+      },
+      "propertyDescriptors" : {
+        "statement-delimiter" : {
+          "displayName" : "Statement Delimiter",
+          "identifiesControllerService" : false,
+          "name" : "statement-delimiter",
+          "sensitive" : false
+        },
+        "Hive Database Connection Pooling Service" : {
+          "displayName" : "Hive Database Connection Pooling Service",
+          "identifiesControllerService" : true,
+          "name" : "Hive Database Connection Pooling Service",
+          "sensitive" : false
+        },
+        "hive-charset" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "hive-charset",
+          "sensitive" : false
+        },
+        "rollback-on-failure" : {
+          "displayName" : "Rollback On Failure",
+          "identifiesControllerService" : false,
+          "name" : "rollback-on-failure",
+          "sensitive" : false
+        },
+        "hive-batch-size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "hive-batch-size",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.hive.PutHiveQL",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : {
+      "hive.table.name" : "oeetable_azure_2019_05_27"
+    }
+  }
+}
