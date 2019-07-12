@@ -1,0 +1,579 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "2d15e148-b53b-3bf4-bf06-3d139426b4b9",
+        "name" : "ReplaceText",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "8f240475-505b-3512-8409-111184fb8064",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "tweet" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "4f063485-c6a1-3a77-a22b-3836009a531c",
+        "name" : "RouteOnAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "4f063485-c6a1-3a77-a22b-3836009a531c",
+        "name" : "RouteOnAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "e97f5523-9a1e-3fca-ab57-597756396fbd",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "b6fac621-4b28-3189-af8b-3c0552af7e04",
+        "name" : "EvaluateJsonPath",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "b6fac621-4b28-3189-af8b-3c0552af7e04",
+        "name" : "EvaluateJsonPath",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "79591cc4-fb89-367f-9b90-24dce49aaf2c",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "99cc7bba-2cb3-3849-951c-612289778818",
+        "name" : "GetTwitter",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "3bbbdeb0-226e-30d7-9d44-1f21ef16e454",
+        "name" : "PutKafka",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "7edf8e39-5038-378e-8aff-49560a16b9da",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+        "id" : "2d15e148-b53b-3bf4-bf06-3d139426b4b9",
+        "name" : "ReplaceText",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "funnels" : [ ],
+    "identifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "Social Media Streaming",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : -821.331166937934,
+      "y" : 804.2465133011433
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "unmatched" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "4f063485-c6a1-3a77-a22b-3836009a531c",
+      "name" : "RouteOnAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 460.0000466382196,
+        "y" : 547.9999990638626
+      },
+      "properties" : {
+        "Routing Strategy" : "Route to Property name",
+        "tweet" : "${twitter.msg:isEmpty():not()}"
+      },
+      "propertyDescriptors" : {
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        },
+        "tweet" : {
+          "displayName" : "tweet",
+          "identifiesControllerService" : false,
+          "name" : "tweet",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-social-media-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "99cc7bba-2cb3-3849-951c-612289778818",
+      "name" : "GetTwitter",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 454.0000466382196,
+        "y" : 93.99999906386256
+      },
+      "properties" : {
+        "Consumer Key" : "Eb00yHl7CG3spJtFzkQVp2kjK",
+        "Access Token" : "47934951-3iMbFU8YsFuzA8DkDH1FgsFH8YqMMNpXDl00JxnBL",
+        "Twitter Endpoint" : "Filter Endpoint",
+        "Terms to Filter On" : "CLOUDERA,BIGDATA,HADOOP,NIFI,KAFKA"
+      },
+      "propertyDescriptors" : {
+        "Consumer Key" : {
+          "displayName" : "Consumer Key",
+          "identifiesControllerService" : false,
+          "name" : "Consumer Key",
+          "sensitive" : false
+        },
+        "Consumer Secret" : {
+          "displayName" : "Consumer Secret",
+          "identifiesControllerService" : false,
+          "name" : "Consumer Secret",
+          "sensitive" : false
+        },
+        "Access Token" : {
+          "displayName" : "Access Token",
+          "identifiesControllerService" : false,
+          "name" : "Access Token",
+          "sensitive" : false
+        },
+        "Languages" : {
+          "displayName" : "Languages",
+          "identifiesControllerService" : false,
+          "name" : "Languages",
+          "sensitive" : false
+        },
+        "IDs to Follow" : {
+          "displayName" : "IDs to Follow",
+          "identifiesControllerService" : false,
+          "name" : "IDs to Follow",
+          "sensitive" : false
+        },
+        "Twitter Endpoint" : {
+          "displayName" : "Twitter Endpoint",
+          "identifiesControllerService" : false,
+          "name" : "Twitter Endpoint",
+          "sensitive" : false
+        },
+        "Locations to Filter On" : {
+          "displayName" : "Locations to Filter On",
+          "identifiesControllerService" : false,
+          "name" : "Locations to Filter On",
+          "sensitive" : false
+        },
+        "Terms to Filter On" : {
+          "displayName" : "Terms to Filter On",
+          "identifiesControllerService" : false,
+          "name" : "Terms to Filter On",
+          "sensitive" : false
+        },
+        "Access Token Secret" : {
+          "displayName" : "Access Token Secret",
+          "identifiesControllerService" : false,
+          "name" : "Access Token Secret",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.twitter.GetTwitter",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "2d15e148-b53b-3bf4-bf06-3d139426b4b9",
+      "name" : "ReplaceText",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 451.0000466382196,
+        "y" : 752.9999990638626
+      },
+      "properties" : {
+        "Regular Expression" : "(?s)(^.*$)",
+        "Replacement Value" : "{\"tweet_id\":${twitter.tweet_id},\"created_unixtime\":${twitter.unixtime},\"created_time\":\"${twitter.time}\",\"lang\":\"${twitter.language}\",\"displayname\":\"${twitter.handle}\",\"time_zone\":\"${twitter.time_zone}\",\"msg\":\"${twitter.msg}\"}",
+        "Evaluation Mode" : "Entire text",
+        "Character Set" : "UTF-8",
+        "Maximum Buffer Size" : "1 MB",
+        "Replacement Strategy" : "Regex Replace"
+      },
+      "propertyDescriptors" : {
+        "Regular Expression" : {
+          "displayName" : "Search Value",
+          "identifiesControllerService" : false,
+          "name" : "Regular Expression",
+          "sensitive" : false
+        },
+        "Replacement Value" : {
+          "displayName" : "Replacement Value",
+          "identifiesControllerService" : false,
+          "name" : "Replacement Value",
+          "sensitive" : false
+        },
+        "Evaluation Mode" : {
+          "displayName" : "Evaluation Mode",
+          "identifiesControllerService" : false,
+          "name" : "Evaluation Mode",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Maximum Buffer Size" : {
+          "displayName" : "Maximum Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "Maximum Buffer Size",
+          "sensitive" : false
+        },
+        "Replacement Strategy" : {
+          "displayName" : "Replacement Strategy",
+          "identifiesControllerService" : false,
+          "name" : "Replacement Strategy",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ReplaceText",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "b6fac621-4b28-3189-af8b-3c0552af7e04",
+      "name" : "EvaluateJsonPath",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 455.0000466382196,
+        "y" : 321.99999906386256
+      },
+      "properties" : {
+        "Destination" : "flowfile-attribute",
+        "twitter.msg" : "$.text",
+        "twitter.location" : "$.user.location",
+        "Return Type" : "auto-detect",
+        "twitter.hashtags" : "$.entities.hashtags[0].text",
+        "Null Value Representation" : "empty string",
+        "twitter.language" : "$.lang",
+        "twitter.unixtime" : "$.timestamp_ms",
+        "Path Not Found Behavior" : "ignore",
+        "twitter.handle" : "$.user.screen_name",
+        "twitter.tweet_id" : "$.id",
+        "twitter.user" : "$.user.name",
+        "twitter.time_zone" : "$.user.time_zone",
+        "twitter.time" : "$.created_at"
+      },
+      "propertyDescriptors" : {
+        "Destination" : {
+          "displayName" : "Destination",
+          "identifiesControllerService" : false,
+          "name" : "Destination",
+          "sensitive" : false
+        },
+        "twitter.msg" : {
+          "displayName" : "twitter.msg",
+          "identifiesControllerService" : false,
+          "name" : "twitter.msg",
+          "sensitive" : false
+        },
+        "twitter.location" : {
+          "displayName" : "twitter.location",
+          "identifiesControllerService" : false,
+          "name" : "twitter.location",
+          "sensitive" : false
+        },
+        "Return Type" : {
+          "displayName" : "Return Type",
+          "identifiesControllerService" : false,
+          "name" : "Return Type",
+          "sensitive" : false
+        },
+        "twitter.hashtags" : {
+          "displayName" : "twitter.hashtags",
+          "identifiesControllerService" : false,
+          "name" : "twitter.hashtags",
+          "sensitive" : false
+        },
+        "Null Value Representation" : {
+          "displayName" : "Null Value Representation",
+          "identifiesControllerService" : false,
+          "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "twitter.language" : {
+          "displayName" : "twitter.language",
+          "identifiesControllerService" : false,
+          "name" : "twitter.language",
+          "sensitive" : false
+        },
+        "twitter.unixtime" : {
+          "displayName" : "twitter.unixtime",
+          "identifiesControllerService" : false,
+          "name" : "twitter.unixtime",
+          "sensitive" : false
+        },
+        "Path Not Found Behavior" : {
+          "displayName" : "Path Not Found Behavior",
+          "identifiesControllerService" : false,
+          "name" : "Path Not Found Behavior",
+          "sensitive" : false
+        },
+        "twitter.handle" : {
+          "displayName" : "twitter.handle",
+          "identifiesControllerService" : false,
+          "name" : "twitter.handle",
+          "sensitive" : false
+        },
+        "twitter.tweet_id" : {
+          "displayName" : "twitter.tweet_id",
+          "identifiesControllerService" : false,
+          "name" : "twitter.tweet_id",
+          "sensitive" : false
+        },
+        "twitter.user" : {
+          "displayName" : "twitter.user",
+          "identifiesControllerService" : false,
+          "name" : "twitter.user",
+          "sensitive" : false
+        },
+        "twitter.time_zone" : {
+          "displayName" : "twitter.time_zone",
+          "identifiesControllerService" : false,
+          "name" : "twitter.time_zone",
+          "sensitive" : false
+        },
+        "twitter.time" : {
+          "displayName" : "twitter.time",
+          "identifiesControllerService" : false,
+          "name" : "twitter.time",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-kafka-0-8-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "afff6721-56a4-3b49-9509-f1b911708c6c",
+      "identifier" : "3bbbdeb0-226e-30d7-9d44-1f21ef16e454",
+      "name" : "PutKafka",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 444.924727445779,
+        "y" : 981.8975759516225
+      },
+      "properties" : {
+        "Max Record Size" : "1 MB",
+        "Compression Codec" : "none",
+        "Delivery Guarantee" : "0",
+        "Max Buffer Size" : "5 MB",
+        "Communications Timeout" : "30 secs",
+        "Async Batch Size" : "16384"
+      },
+      "propertyDescriptors" : {
+        "Partition" : {
+          "displayName" : "Partition",
+          "identifiesControllerService" : false,
+          "name" : "Partition",
+          "sensitive" : false
+        },
+        "Max Record Size" : {
+          "displayName" : "Max Record Size",
+          "identifiesControllerService" : false,
+          "name" : "Max Record Size",
+          "sensitive" : false
+        },
+        "Client Name" : {
+          "displayName" : "Client Name",
+          "identifiesControllerService" : false,
+          "name" : "Client Name",
+          "sensitive" : false
+        },
+        "Compression Codec" : {
+          "displayName" : "Compression Codec",
+          "identifiesControllerService" : false,
+          "name" : "Compression Codec",
+          "sensitive" : false
+        },
+        "Message Delimiter" : {
+          "displayName" : "Message Delimiter",
+          "identifiesControllerService" : false,
+          "name" : "Message Delimiter",
+          "sensitive" : false
+        },
+        "Topic Name" : {
+          "displayName" : "Topic Name",
+          "identifiesControllerService" : false,
+          "name" : "Topic Name",
+          "sensitive" : false
+        },
+        "Kafka Key" : {
+          "displayName" : "Kafka Key",
+          "identifiesControllerService" : false,
+          "name" : "Kafka Key",
+          "sensitive" : false
+        },
+        "Delivery Guarantee" : {
+          "displayName" : "Delivery Guarantee",
+          "identifiesControllerService" : false,
+          "name" : "Delivery Guarantee",
+          "sensitive" : false
+        },
+        "Max Buffer Size" : {
+          "displayName" : "Max Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "Max Buffer Size",
+          "sensitive" : false
+        },
+        "Queue Buffering Max Time" : {
+          "displayName" : "Queue Buffering Max Time",
+          "identifiesControllerService" : false,
+          "name" : "Queue Buffering Max Time",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Known Brokers" : {
+          "displayName" : "Known Brokers",
+          "identifiesControllerService" : false,
+          "name" : "Known Brokers",
+          "sensitive" : false
+        },
+        "Async Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Async Batch Size",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.kafka.PutKafka",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : { }
+  }
+}
