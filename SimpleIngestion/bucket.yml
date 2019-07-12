@@ -1,5 +1,6 @@
 flows:
   8c324f58-aa38-4083-b6ca-573d73817040: {ver: 1, file: MySQLToHive.snapshot}
+  2999eca0-473d-49a4-af6b-042348b573c0: {ver: 1, file: KafkaToHiveDruid.snapshot}
   f49ee7d5-d725-40ed-a1d2-ba8c4107ce50: {ver: 1, file: DataIngestSimulation.snapshot}
   34fee55a-713e-424d-913f-70cc0d465fe8: {ver: 1, file: SAP_Hana_Offload.snapshot}
   eb97f02e-44a6-4661-9075-c55bc9d10550: {ver: 1, file: IngestJSONToHive.snapshot}
