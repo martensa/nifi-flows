@@ -1,4 +1,5 @@
 flows:
+  88553af4-3be1-4e2c-b18a-be2ef4ab73aa: {ver: 1, file: SyslogDemo.snapshot}
   994555b5-f3b0-455b-8088-3580b5210db7: {ver: 1, file: LogFileIngest.snapshot}
 layoutVer: 1
 bucketId: 23e5914f-9ec0-4d7c-8f93-57f66d29bd4c
