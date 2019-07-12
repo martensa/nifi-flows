@@ -2,5 +2,6 @@ flows:
   8c324f58-aa38-4083-b6ca-573d73817040: {ver: 1, file: MySQLToHive.snapshot}
   34fee55a-713e-424d-913f-70cc0d465fe8: {ver: 1, file: SAP_Hana_Offload.snapshot}
   abfcd381-4454-42b5-8def-4822809a03f1: {ver: 1, file: DATEV_NiFi_Demo.snapshot}
+  65dbb949-4fa2-42ef-8473-af867cc04cd6: {ver: 1, file: CSVToHiveBasedOnJSON.snapshot}
 layoutVer: 1
 bucketId: 34daf467-da63-4eb9-9c7e-310be271269b
